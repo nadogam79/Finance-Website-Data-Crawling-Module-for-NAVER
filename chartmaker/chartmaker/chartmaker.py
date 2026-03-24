@@ -38,7 +38,7 @@ def get_finance_data(mCode):
         finance_area = soup.select_one('.section.cop_analysis')
         if not finance_area: return None
 
-        # [1] 헤더 분석: 날짜가 써진 두 번째 tr(row)의 th(헤드, 항목명)들만 추출
+        # [1] 헤더 분석: 날짜가 써진 두 번째 tr(row)의 th(헤드, 항목명)들만 추출  
         header_row = finance_area.select('thead tr')[1]
         ths = header_row.select('th')
         headers_text = [th.get_text(strip=True) for th in ths]
